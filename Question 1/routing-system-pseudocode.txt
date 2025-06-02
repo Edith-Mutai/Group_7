@@ -1,28 +1,21 @@
-FUNCTION isPeakHour(startHour, endHour, currentHour)
-    IF currentHour >= startHour AND currentHour < endHour THEN
-        RETURN TRUE
-    ELSE
-        RETURN FALSE
-END FUNCTION
+Input
+A hashmap containing routes and the number of vehicles per route(base schedule)
+A hashmap containing maintenance schedules
+A list containing event routes
+Current hour
 
-FUNCTION adjustSchedule(baseSchedule, peakStart, peakEnd, currentHour, eventRoutes, maintenanceRoutes)
-    newSchedule = EMPTY LIST
 
-    FOR EACH route IN baseSchedule
-        vehicles = route.vehicles
-        name = route.name
+Steps
+1. Create lists and hashmaps containing the buses’ and trains' base schedules, maintenance, routes usually taken during events, and the current hour.
 
-        IF name IS IN eventRoutes THEN
-            vehicles = vehicles + 2.  Add extra cars for the event
+2. If the current hour falls within the peak hours, add the required number of buses or trains to that route
 
-        IF isPeakHour(peakStart, peakEnd, currentHour) THEN
-            vehicles = vehicles +.3  Add extra vehicles for peak hour
+3. If the route that the bus or train is using is an event route, add the required number of buses or trains to that route
 
-        IF name IS IN maintenanceRoutes THEN
-            vehicles = 0  // Vehicles go for maintenance
+4. If the bus or train is on a route where buses and trains are required for maintenance, reduce the number of buses or trains on that route that need to go for maintenance. 
 
-        ADD {name, vehicles} TO newSchedule
-    END FOR
+5. Create an empty hashmap that will contain the new schedule for the buses' and trains' new routes
 
-    RETURN newSchedule
-END FUNCTION
+Output
+New schedules of the trains and buses
+
