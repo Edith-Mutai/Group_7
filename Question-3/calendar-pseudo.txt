@@ -1,0 +1,31 @@
+Input 
+Hashmaps containing users and their user names
+Event title
+Event date
+
+START
+
+Create a hashmap containing users and their user names
+
+Create a function that adds users to the app
+
+If the user ID does not exist, add the user
+
+If it exists, print user already exists
+
+Create a function that adds an event, with the title and date, to the calendar according to the user's ID
+
+Create a function that deletes an event.
+
+Filter out the event based on the title and date provided as input, then delete
+
+Create a function that retrieves all events for the user
+
+Print all events according to the user ID
+
+END
+
+Output
+Added events
+Deleted events
+Retrieved events
