@@ -1,0 +1,27 @@
+Input
+A hashmap containing device ID, updates, scheduled deployment time, and deployment status
+
+
+START
+Create a hashmap of devices with their ID, updates, scheduled deployment time, and deployment status
+
+If the input is invalid, return an error.
+
+If the device is not in the devices in the schedule, print device is not compatible.
+
+If the device where the deployment is taking place is busy with other updates in progress, show that it is busy.
+
+Update the deployment status to pending.
+
+Create a random chance of success for deployment.
+
+If deployment is successful, based on the chance, update the status to “In progress”.
+
+If not, then print an error.
+
+If the update fails to deploy, roll back the update and deploy the update again
+END
+
+Output
+Updated hashmaps
+
