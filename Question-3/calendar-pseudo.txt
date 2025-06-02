@@ -1,0 +1,25 @@
+Input
+User ID
+User name - string
+Event title - string
+Event Date - string
+
+Steps
+START
+
+Create a hashmap containing user IDs and their user names
+
+If a user ID does not exist, add the user to the hashmap
+
+If a user wants to add an event and their user ID matches, then add the event based on the event title and date.
+
+If a user wants to delete an event and their user ID matches, then delete the event based on the event title and date.
+
+If a user wants to retrieve an event and their user ID matches, then retrieve all events for the user.
+
+END
+
+Output
+String
+
+
