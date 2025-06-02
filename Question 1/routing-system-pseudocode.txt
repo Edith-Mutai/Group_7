@@ -1,21 +1,28 @@
-# Input
-list of routes and number of buses/trains per route
-peakHour
-Maintenance schedule
+FUNCTION isPeakHour(startHour, endHour, currentHour)
+    IF currentHour >= startHour AND currentHour < endHour THEN
+        RETURN TRUE
+    ELSE
+        RETURN FALSE
+END FUNCTION
 
+FUNCTION adjustSchedule(baseSchedule, peakStart, peakEnd, currentHour, eventRoutes, maintenanceRoutes)
+    newSchedule = EMPTY LIST
 
-Create a function peakHour that takes the range of hours when there is peak traffic
+    FOR EACH route IN baseSchedule
+        vehicles = route.vehicles
+        name = route.name
 
-Create a function adjustSchedule which takes in The base schedule which is the schedule of routes and the number of buses or trains per route
+        IF name IS IN eventRoutes THEN
+            vehicles = vehicles + 2.  Add extra cars for the event
 
-Create the new schedule array which is an empty array
+        IF isPeakHour(peakStart, peakEnd, currentHour) THEN
+            vehicles = vehicles +.3  Add extra vehicles for peak hour
 
-Iterate through the base schedule and check whether the event routes are there.
+        IF name IS IN maintenanceRoutes THEN
+            vehicles = 0  // Vehicles go for maintenance
 
-If so increase the number of vehicles for that route
+        ADD {name, vehicles} TO newSchedule
+    END FOR
 
-Check whether it is peak hour, if so increase the number of vehicles
-
-For the routes which are not busy the vehicles using that route go for maintenance
-
-Return the new schedule
+    RETURN newSchedule
+END FUNCTION
