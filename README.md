@@ -1,3 +1,6 @@
+This repository contains live-coding questions implemented in JavaScript, Kotlin and Python
+
+
 # Group_7
 **QUESTION 1**
 
