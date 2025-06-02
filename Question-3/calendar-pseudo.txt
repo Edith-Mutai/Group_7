@@ -1,31 +1,25 @@
-Input 
-Hashmaps containing users and their user names
-Event title
-Event date
+feature/calendar-kotlin
 
+Input
+User ID
+User name - string
+Event title - string
+Event Date - string
+
+Steps
 START
 
-Create a hashmap containing users and their user names
+Create a hashmap containing user IDs and their user names
 
-Create a function that adds users to the app
+If a user ID does not exist, add the user to the hashmap
 
-If the user ID does not exist, add the user
+If a user wants to add an event and their user ID matches, then add the event based on the event title and date.
 
-If it exists, print user already exists
+If a user wants to delete an event and their user ID matches, then delete the event based on the event title and date.
 
-Create a function that adds an event, with the title and date, to the calendar according to the user's ID
-
-Create a function that deletes an event.
-
-Filter out the event based on the title and date provided as input, then delete
-
-Create a function that retrieves all events for the user
-
-Print all events according to the user ID
+If a user wants to retrieve an event and their user ID matches, then retrieve all events for the user.
 
 END
 
 Output
-Added events
-Deleted events
-Retrieved events
+String
